@@ -19,10 +19,11 @@ laurea (286)
 ##  SELECT * FROM `exams` WHERE `date` = '2020-06-20' AND `hour` > '14:00:00 '
 
 6. Selezionare tutti i corsi di laurea magistrale (38)
-
+##  SELECT * FROM `degrees` WHERE `name` LIKE '%Magistrale%'
 
 7. Da quanti dipartimenti è composta l'università? (12)
-
+##  SELECT * FROM `departments` WHERE `id` IS NOT NULL
+##  SELECT * FROM `departments` WHERE `id`
 
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
