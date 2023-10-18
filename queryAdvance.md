@@ -3,9 +3,11 @@
 Group by:
 
 - Contare quanti iscritti ci sono stati ogni anno
-##  mysql> select count(id) as enrolment_year 
+##  mysql> select year(enrolment_date) as enrolment_year,
+    -> count(*) as enrolment_total
     -> from students
-    -> group by year(enrolment_date) = 2021;
+    -> group by year(enrolment_date)
+    -> order by enrolment_year asc;  
 
 - Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
