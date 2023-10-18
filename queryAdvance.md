@@ -16,6 +16,9 @@ Group by:
     -> group by office_address;
 
 - Calcolare la media dei voti di ogni appello d'esame
+## mysql> select exam_id, avg(vote) as average
+    -> from exam_student
+    -> group by exam_id;
 
 - Contare quanti corsi di laurea ci sono per ogni dipartimento
 
