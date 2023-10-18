@@ -10,6 +10,10 @@ Group by:
     -> order by enrolment_year asc;  
 
 - Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+##  mysql> select office_address,     
+    -> count(*) as total_teachers
+    -> from teachers
+    -> group by office_address;
 
 - Calcolare la media dei voti di ogni appello d'esame
 
