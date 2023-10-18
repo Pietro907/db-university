@@ -28,14 +28,23 @@ Group by:
 Joins:
 
 - Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
-mysql> select students.*
+##  mysql> select students.*
     -> from students     
     -> join degrees on degree_id = degrees.id
     -> where degrees.name = 'Corso di Laurea in Economia';
 
 - Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
+##  mysql> select degrees.level, degrees.name as degree_name, departments.name as department_name
+    -> from degrees
+    -> join departments on departments.id = 7
+    -> where degrees.level = 'magistrale';
 
 - Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+mysql> select id as id_teacher, name as Nome, surname as Cognome
+    -> from teachers
+    -> join course_teacher on teacher_id = teachers.id
+    -> where teachers.name = 'Fulvio';
+    // Da controllare!!!!
 
 - Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono
   iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
