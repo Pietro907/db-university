@@ -21,6 +21,9 @@ Group by:
     -> group by exam_id;
 
 - Contare quanti corsi di laurea ci sono per ogni dipartimento
+##  mysql> select department_id, count(*) as total_degree_department
+    -> from degrees
+    -> group by department_id;
 
 Joins:
 
