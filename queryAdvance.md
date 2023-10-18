@@ -28,6 +28,10 @@ Group by:
 Joins:
 
 - Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+mysql> select students.*
+    -> from students     
+    -> join degrees on degree_id = degrees.id
+    -> where degrees.name = 'Corso di Laurea in Economia';
 
 - Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
 
