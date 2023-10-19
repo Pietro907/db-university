@@ -40,11 +40,11 @@ Joins:
     -> where degrees.level = 'magistrale';
 
 - Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
-mysql> select id as id_teacher, name as Nome, surname as Cognome
+##  mysql> select teachers.id as id, teachers.name as nome, teachers.surname as cognome, courses.name as corso
     -> from teachers
     -> join course_teacher on teacher_id = teachers.id
-    -> where teachers.name = 'Fulvio';
-    // Da controllare!!!!
+    -> join courses on course_id = courses.id
+    -> where teachers.id = 44;
 
 - Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono
   iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
@@ -56,7 +56,7 @@ mysql> select id as id_teacher, name as Nome, surname as Cognome
 
 
 //Percorsi migliorati??? altra soluzione forse migliore
-##  mysql> select students.id as ID, students.name as Name, students.surname as Cognome, departments.id as Dipartimento, degrees.name as Corso
+##  mysql> select students.id as ID, students.name as Name, students.surname as Cognome, departments.id as           Dipartimento, degrees.name as Corso
     -> from students
     -> join degrees on students.degree_id = degrees.id 
     -> join departments on degrees.department_id = departments.id 
@@ -95,7 +95,7 @@ BONUS:
 - Selezionare per ogni studente il numero di tentativi sostenuti per ogni esame, stampando anche il
   voto massimo. Successivamente, filtrare i tentativi con voto minimo 18.
 
-  ##  mysql> select students.id as ID, students.name as Name, students.surname as Cognome,
+##  mysql> select students.id as ID, students.name as Name, students.surname as Cognome,
     -> count(exam_student.vote) as Totale,
     -> max(exam_student.vote) as Voto_Max
     -> from students
